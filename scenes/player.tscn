@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://erbtt6xf56cu"]
+
+[ext_resource type="Script" uid="uid://dn6uc44krevfb" path="res://scenes/player.gd" id="1_3vyb7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bb2ia"]
+
+[node name="player" type="CharacterBody3D" unique_id=2147074079]
+script = ExtResource("1_3vyb7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1313761603]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_bb2ia")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=1329517671]
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D" unique_id=1349365778]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6901855, 0)
+doppler_tracking = 2
+current = true
