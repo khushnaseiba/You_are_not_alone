@@ -7,20 +7,11 @@
 radius = 1.0
 height = 4.0
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bb2ia"]
-
 [node name="ghost1" type="CharacterBody3D" unique_id=899660977]
 script = ExtResource("1_aewnt")
-speed = null
-player_path = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1815747841]
 shape = SubResource("CapsuleShape3D_5e3yu")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1292756821]
 texture = ExtResource("1_njyru")
-
-[node name="catcharea" type="Area3D" parent="." unique_id=177135142]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="catcharea" unique_id=1479825913]
-shape = SubResource("CapsuleShape3D_bb2ia")

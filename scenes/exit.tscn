@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://tuqmqyrsmvei"]
+
+[ext_resource type="Script" uid="uid://dw5hfcnwxxwel" path="res://scenes/area_3d.gd" id="1_l0aq0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bb2ia"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5e3yu"]
+
+[node name="exit" type="Node3D" unique_id=1780229530]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1087619529]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1707651622]
+shape = SubResource("BoxShape3D_bb2ia")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=289255685]
+script = ExtResource("1_l0aq0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2143189948]
+shape = SubResource("BoxShape3D_5e3yu")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

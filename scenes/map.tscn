@@ -2,12 +2,11 @@
 
 [ext_resource type="MeshLibrary" uid="uid://kpay4bktfin0" path="res://scenes/tile.meshlib" id="1_paxxb"]
 [ext_resource type="PackedScene" uid="uid://erbtt6xf56cu" path="res://scenes/player.tscn" id="2_paxxb"]
+[ext_resource type="PackedScene" uid="uid://tuqmqyrsmvei" path="res://scenes/exit.tscn" id="3_gldc4"]
 
 [sub_resource type="Environment" id="Environment_bb2ia"]
-background_mode = 1
-volumetric_fog_enabled = true
 
-[node name="Node3D" type="Node3D" unique_id=843093447]
+[node name="map" type="Node3D" unique_id=843093447]
 
 [node name="GridMap" type="GridMap" parent="." unique_id=1851550263]
 mesh_library = ExtResource("1_paxxb")
@@ -18,7 +17,11 @@ data = {
 }
 
 [node name="player" parent="." unique_id=2147074079 instance=ExtResource("2_paxxb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0173702, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8014145, 0)
+collision_layer = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=721021622]
 environment = SubResource("Environment_bb2ia")
+
+[node name="exit" parent="." unique_id=151288992 instance=ExtResource("3_gldc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.073181, 2.5296078, 19.281345)

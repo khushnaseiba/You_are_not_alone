@@ -57,6 +57,7 @@ move_left={
 2d_render/layer_1="terrain"
 2d_render/layer_2="player"
 2d_render/layer_3="wall"
+2d_render/layer_5="exit"
 
 [physics]
 
