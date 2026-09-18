@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cjl3upc1fgdj2" path="res://scenes/ghost_1.gd" id="1_aewnt"]
 [ext_resource type="Texture2D" uid="uid://m28dmipga6b3" path="res://scenes/7f424bb6-8114-405f-88b6-32e26db0225a_removalai_preview.png" id="1_njyru"]
+[ext_resource type="AudioStream" uid="uid://cndw8x74jup3i" path="res://scenes/universfield-horror-tension-cinematic-trailer-153269.mp3" id="3_vjojv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5e3yu"]
 radius = 1.0
@@ -15,3 +16,6 @@ shape = SubResource("CapsuleShape3D_5e3yu")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1292756821]
 texture = ExtResource("1_njyru")
+
+[node name="ghostaudio" type="AudioStreamPlayer3D" parent="." unique_id=127998841]
+stream = ExtResource("3_vjojv")

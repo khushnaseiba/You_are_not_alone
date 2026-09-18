@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://b847vvsd1chb0" path="res://scenes/quit.gd" id="3_3vvtq"]
 [ext_resource type="Texture2D" uid="uid://djpv52wup1htj" path="res://scenes/button_play.png" id="4_s5g8n"]
 [ext_resource type="Script" uid="uid://bypsti4vec23" path="res://scenes/play.gd" id="5_s5g8n"]
+[ext_resource type="PackedScene" uid="uid://kwkl5k8srkrl" path="res://scenes/bgaudio.tscn" id="6_7yvfd"]
 
 [node name="Control" type="Control" unique_id=1929781236]
 layout_mode = 3
@@ -42,6 +43,8 @@ offset_right = 1145.0
 offset_bottom = 490.0
 icon = ExtResource("4_s5g8n")
 script = ExtResource("5_s5g8n")
+
+[node name="bgaudio" parent="play" unique_id=781160043 instance=ExtResource("6_7yvfd")]
 
 [connection signal="pressed" from="quit" to="quit" method="_on_pressed"]
 [connection signal="pressed" from="play" to="play" method="_on_pressed"]
