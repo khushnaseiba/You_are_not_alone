@@ -1,47 +1,46 @@
-[gd_scene format=3 uid="uid://ubby6b6wft53"]
+[gd_scene format=3 uid="uid://bbd8150c34f66"]
 
-[ext_resource type="Texture2D" uid="uid://bp0ivuwgr3w4o" path="res://scenes/—Pngtree—chilling cement texture a terrifying_13360919.jpg" id="1_ywnoi"]
-[ext_resource type="Texture2D" uid="uid://dw77vop05k46y" path="res://scenes/gray-wall-with-marks-bottom.jpg" id="2_jy7pm"]
+[ext_resource type="Texture2D" uid="uid://dw77vop05k46y" path="res://scenes/gray-wall-with-marks-bottom.jpg" id="1_syb15"]
+[ext_resource type="Texture2D" uid="uid://cg47ajhq2jsef" path="res://scenes/close-up-concrete-wall-with-crack.jpg" id="2_kujf0"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5e3yu"]
-albedo_texture = ExtResource("1_ywnoi")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fpxil"]
+albedo_texture = ExtResource("1_syb15")
 
 [sub_resource type="BoxMesh" id="BoxMesh_bb2ia"]
-material = SubResource("StandardMaterial3D_5e3yu")
-size = Vector3(2, 4, 2)
+material = SubResource("StandardMaterial3D_fpxil")
+size = Vector3(2, 8, 2)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_bb2ia"]
-size = Vector3(2, 4, 2)
+[sub_resource type="BoxShape3D" id="BoxShape3D_5e3yu"]
+size = Vector3(2, 8, 2)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q7utx"]
-albedo_texture = ExtResource("2_jy7pm")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r8a6g"]
+albedo_texture = ExtResource("2_kujf0")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7lqq"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_5e3yu"]
-material = SubResource("StandardMaterial3D_l7lqq")
+[sub_resource type="BoxMesh" id="BoxMesh_xsd3y"]
+material = SubResource("StandardMaterial3D_r8a6g")
 size = Vector3(2, 1, 2)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_xsd3y"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_w3l5p"]
 size = Vector3(2, 1, 2)
 
-[node name="tile" type="Node3D" unique_id=86142997]
+[node name="Node3D" type="Node3D" unique_id=574949492]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=606186205]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1708731231]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+layers = 2
 mesh = SubResource("BoxMesh_bb2ia")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1208269187]
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1016755533]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=2038233979]
-shape = SubResource("BoxShape3D_bb2ia")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1322673941]
+shape = SubResource("BoxShape3D_5e3yu")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=136936786]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.7445819)
-material_override = SubResource("StandardMaterial3D_q7utx")
-mesh = SubResource("BoxMesh_5e3yu")
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=21794246]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 4.1120605)
+layers = 2
+mesh = SubResource("BoxMesh_xsd3y")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2" unique_id=36873503]
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2" unique_id=1405302957]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" unique_id=1332913505]
-shape = SubResource("BoxShape3D_xsd3y")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" unique_id=112513117]
+shape = SubResource("BoxShape3D_w3l5p")

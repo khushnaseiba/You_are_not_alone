@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://q1mrrdsv8ber"]
+
+[ext_resource type="Texture2D" uid="uid://m28dmipga6b3" path="res://scenes/7f424bb6-8114-405f-88b6-32e26db0225a_removalai_preview.png" id="1_pstry"]
+[ext_resource type="Script" uid="uid://ddi5uis4ohy1j" path="res://scenes/ghost_2.gd" id="1_q66ni"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bb2ia"]
+radius = 1.0
+height = 4.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5e3yu"]
+
+[node name="ghost2" type="CharacterBody3D" unique_id=173716595]
+script = ExtResource("1_q66ni")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1700992366]
+shape = SubResource("CapsuleShape3D_bb2ia")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1722848429]
+texture = ExtResource("1_pstry")
+
+[node name="catcharea" type="Area3D" parent="." unique_id=1402658611]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="catcharea" unique_id=1783116125]
+shape = SubResource("CapsuleShape3D_5e3yu")

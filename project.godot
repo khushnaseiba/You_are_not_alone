@@ -16,6 +16,8 @@ config/icon="res://icon.svg"
 
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -50,6 +52,12 @@ move_left={
 ]
 }
 
+[layer_names]
+
+2d_render/layer_1="terrain"
+2d_render/layer_2="player"
+2d_render/layer_3="wall"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
@@ -57,4 +65,3 @@ move_left={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-renderer/rendering_method="mobile"

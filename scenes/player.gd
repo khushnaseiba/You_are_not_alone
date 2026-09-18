@@ -4,6 +4,9 @@ extends CharacterBody3D
 @export var jump_velocity: float = 4.5
 @export var mouse_sensitivity: float = 0.003
 
+# TOGGLE THIS: Change to true if it feels backwards to your eyes!
+@export var invert_y_axis: bool = false
+
 @onready var spring_arm: SpringArm3D = $SpringArm3D
 
 func _ready() -> void:
@@ -17,27 +20,32 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event is InputEventMouseButton and Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		
-	# Rotate the camera stick based on mouse movement
+	# Rotate based on mouse movement
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		spring_arm.rotate_y(-event.relative.x * mouse_sensitivity)
-		spring_arm.rotate_x(-event.relative.y * mouse_sensitivity)
-		# Limit vertical camera angles so it doesn't flip completely upside down
-		spring_arm.rotation.x = clamp(spring_arm.rotation.x, deg_to_rad(-60), deg_to_rad(30))
+		# Rotate the player body horizontally
+		rotate_y(-event.relative.x * mouse_sensitivity)
+		
+		# Calculate the vertical movement
+		var y_rotation = event.relative.y * mouse_sensitivity
+		if invert_y_axis:
+			y_rotation = -y_rotation
+			
+		# Apply vertical tilt to the spring arm
+		spring_arm.rotate_x(y_rotation)
+		
+		# Clamp the vertical angle so it cannot flip completely over the head or under the feet
+		spring_arm.rotation.x = clamp(spring_arm.rotation.x, deg_to_rad(-60), deg_to_rad(60))
+		
+		# Keep the camera perfectly straight sideways
+		spring_arm.rotation.z = 0
+		spring_arm.rotation.y = 0 
 
 func _physics_process(delta: float) -> void:
-	# Apply engine gravity if the player is in the air
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	# Handle Jump (using Spacebar by default)
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = jump_velocity
-
 	# Get WASD input direction vector
 	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
-	# Calculate world direction based on the horizontal angle of the spring arm
-	var direction := (Vector3(input_dir.x, 0, input_dir.y)).rotated(Vector3.UP, spring_arm.rotation.y).normalized()
+	# Calculate world direction based on the player body's horizontal rotation
+	var direction := (Vector3(input_dir.x, 0, input_dir.y)).rotated(Vector3.UP, rotation.y).normalized()
 	
 	if direction:
 		velocity.x = direction.x * speed
