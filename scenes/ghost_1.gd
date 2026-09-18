@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 @export var speed:= 3.0
 @export var catch_distance:= 1.8
-@export var hear_distance:=20
+@export var hear_distance:=30
 @onready var sound :AudioStreamPlayer3D=$ghostaudio
 var player: Node3D
 

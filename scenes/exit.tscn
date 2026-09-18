@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://tuqmqyrsmvei"]
 
 [ext_resource type="Script" uid="uid://dw5hfcnwxxwel" path="res://scenes/area_3d.gd" id="1_l0aq0"]
+[ext_resource type="Texture2D" uid="uid://bw5utj3kc1iyu" path="res://scenes/Pi7_Pngtreeslightly cracked open dark red_18139427-800x800-400x400.png" id="1_uyw7u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bb2ia"]
+size = Vector3(2, 8, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5e3yu"]
 
@@ -12,6 +14,11 @@
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1707651622]
 shape = SubResource("BoxShape3D_bb2ia")
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D" unique_id=122120322]
+texture = ExtResource("1_uyw7u")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="StaticBody3D" unique_id=687593671]
 
 [node name="Area3D" type="Area3D" parent="." unique_id=289255685]
 script = ExtResource("1_l0aq0")

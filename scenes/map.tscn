@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://dtdwa02ui36nq"]
 
-[ext_resource type="MeshLibrary" uid="uid://kpay4bktfin0" path="res://scenes/tile.meshlib" id="1_paxxb"]
+[ext_resource type="MeshLibrary" uid="uid://vtaye6wx34li" path="res://scenes/tilesss.meshlib" id="1_0cso3"]
 [ext_resource type="PackedScene" uid="uid://erbtt6xf56cu" path="res://scenes/player.tscn" id="2_paxxb"]
 [ext_resource type="PackedScene" uid="uid://tuqmqyrsmvei" path="res://scenes/exit.tscn" id="3_gldc4"]
 [ext_resource type="PackedScene" uid="uid://bp81sn8elxiku" path="res://scenes/ghost_1.tscn" id="4_0cso3"]
-[ext_resource type="PackedScene" uid="uid://kwkl5k8srkrl" path="res://scenes/bgaudio.tscn" id="5_2klcf"]
 
 [sub_resource type="Environment" id="Environment_bb2ia"]
+background_mode = 1
 
 [node name="map" type="Node3D" unique_id=843093447]
 
 [node name="GridMap" type="GridMap" parent="." unique_id=1851550263]
-mesh_library = ExtResource("1_paxxb")
+mesh_library = ExtResource("1_0cso3")
 collision_layer = 4
 collision_mask = 2
 data = {
@@ -26,9 +26,7 @@ collision_layer = 1
 environment = SubResource("Environment_bb2ia")
 
 [node name="exit" parent="." unique_id=151288992 instance=ExtResource("3_gldc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.073181, 2.5296078, 19.281345)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.073181, 3.2367306, 19.281345)
 
 [node name="ghost1" parent="." unique_id=899660977 instance=ExtResource("4_0cso3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.449745, 3.6713152, -0.8638401)
-
-[node name="bgaudio" parent="." unique_id=781160043 instance=ExtResource("5_2klcf")]

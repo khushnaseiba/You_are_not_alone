@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://bvx72jh61weyd" path="res://playagain.gd" id="3_d7pmi"]
 [ext_resource type="Texture2D" uid="uid://dxloo8mj6wi6b" path="res://scenes/button_quit.png" id="4_qlaab"]
 [ext_resource type="Script" uid="uid://cohotxdjpaiug" path="res://quit.gd" id="5_qxovq"]
-[ext_resource type="PackedScene" uid="uid://kwkl5k8srkrl" path="res://scenes/bgaudio.tscn" id="7_d7pmi"]
+[ext_resource type="PackedScene" uid="uid://cmmwuc47jfd8x" path="res://scenes/bgmusic.tscn" id="7_d7pmi"]
 
 [node name="escaped" type="Control" unique_id=1087234809]
 layout_mode = 3
@@ -44,7 +44,7 @@ offset_bottom = 656.0
 icon = ExtResource("4_qlaab")
 script = ExtResource("5_qxovq")
 
-[node name="bgaudio" parent="." unique_id=781160043 instance=ExtResource("7_d7pmi")]
+[node name="bgmusic" parent="." unique_id=1986735669 instance=ExtResource("7_d7pmi")]
 
 [connection signal="pressed" from="playagain" to="playagain" method="_on_pressed"]
 [connection signal="pressed" from="quit" to="quit" method="_on_pressed"]
