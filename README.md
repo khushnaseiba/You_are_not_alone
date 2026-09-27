@@ -19,4 +19,4 @@ So , It's a game where you have to find the exit but as the name suggests you ar
 2. Clone the repo and open it in Godot
 3. Hit Play (F5)
 
-Or play it [in your browser](https://khushnaseiba.github.io/You_are_not_aone)
+Or play it [in your browser](https://khushnaseiba.github.io/You_are_not_alone)
